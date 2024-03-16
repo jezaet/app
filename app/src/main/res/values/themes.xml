@@ -3,6 +3,11 @@
     <style name="Base.Theme.Greenrover" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color2</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+
     </style>
 
     <style name="Theme.Greenrover" parent="Base.Theme.Greenrover" />
