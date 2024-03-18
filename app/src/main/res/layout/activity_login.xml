@@ -7,14 +7,24 @@
     android:background="@color/background_color"
     android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:contentDescription="@string/login_pic"
         app:srcCompat="@drawable/login_pic" />
+
+    <TextView
+        android:id="@+id/loginError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="@string/an_error_occurred_please_check_your_details"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +39,6 @@
         android:padding="@dimen/margin5">
 
         <ImageView
-            android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -67,7 +76,6 @@
         android:padding="@dimen/margin5">
 
         <ImageView
-            android:id="@+id/imageView7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -143,8 +151,8 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/or"
             android:textAlignment="center"

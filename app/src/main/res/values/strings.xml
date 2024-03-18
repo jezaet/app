@@ -12,4 +12,14 @@
     <string name="lock_image">lock image</string>
     <string name="user_img">user img</string>
     <string name="username">Username</string>
+    <string name="address">Address</string>
+    <string name="full_name">Full Name</string>
+    <string name="postcode">postcode</string>
+    <string name="email_address">Email Address</string>
+    <string name="address_img">address_img</string>
+    <string name="email_img">email_img</string>
+    <string name="phone_img">phone_img</string>
+    <string name="phone_number">phone number</string>
+    <string name="back_to_login">back to login</string>
+    <string name="an_error_occurred_please_check_your_details">An Error Occurred please check your details</string>
 </resources>
