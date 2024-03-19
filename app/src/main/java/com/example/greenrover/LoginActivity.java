@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,8 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity{
 
     EditText UserName, UserPassword;
-    Button LoginBtn, SignupBtn;
-    TextView ErrorMsg;
+    Button LoginBtn;
+    TextView SignupBtn , ForgotPassword , ErrorMsg;
+    CheckBox RememberMe;
 
 
 
@@ -26,12 +28,15 @@ public class LoginActivity extends AppCompatActivity{
         setContentView(R.layout.activity_login);
 
 
-        //popup = new DialogBoxPopup();
+        //msg = new DialogBoxPopup();
         UserName = findViewById(R.id.loginUsername);
         UserPassword = findViewById(R.id.loginPassword);
         LoginBtn = findViewById(R.id.Login_button);
         SignupBtn = findViewById(R.id.Register_button);
         ErrorMsg = findViewById(R.id.loginError);
+        RememberMe = findViewById(R.id.RememberMe);
+        ForgotPassword = findViewById(R.id.forgotPassword);
+
 
         SignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override

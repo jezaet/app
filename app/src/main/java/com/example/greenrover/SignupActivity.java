@@ -12,16 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class SignupActivity extends AppCompatActivity{
-    EditText UserName, UserPassword, FullName, Address, Postcode, Email, PhoneNum;
-    Button LoginBtn, SignupBtn;
-    TextView ErrorMsg;
+    EditText UserName, UserPassword, Address, Postcode, Email, PhoneNum , FirstName, LastName;
+    Button SignupBtn;
+    TextView ErrorMsg , LoginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        FullName = findViewById(R.id.Fullname);
+        FirstName = findViewById(R.id.Firstname);
+        LastName = findViewById(R.id.Lastname);
         Address = findViewById(R.id.SignupAddress);
         Postcode = findViewById(R.id.SignupPostcode);
         Email = findViewById(R.id.signupEmail);
@@ -39,7 +40,8 @@ public class SignupActivity extends AppCompatActivity{
         SignupBtn.setOnClickListener(v -> {
             String username = UserName.getText().toString();
             String password = UserPassword.getText().toString();
-            String fullname = FullName.getText().toString();
+            String firstname = FirstName.getText().toString();
+            String lastname = LastName.getText().toString();
             String address = Address.getText().toString();
             String postcode = Postcode.getText().toString();
             String email = Email.getText().toString();
