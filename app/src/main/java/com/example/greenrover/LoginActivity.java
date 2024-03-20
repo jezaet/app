@@ -8,7 +8,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -51,6 +50,9 @@ public class LoginActivity extends AppCompatActivity{
             public void onClick(View v) {
                 String username = UserName.getText().toString();
                 String password = UserPassword.getText().toString();
+                if (username.equals("p") & password.equals("p")){
+                    sucessfulLogin();
+                }
             }
         });
 
@@ -63,6 +65,12 @@ public class LoginActivity extends AppCompatActivity{
     private void ShowSignup(){
         Intent intent = new Intent(this, SignupActivity.class);
         intent.putExtra("name","reg");
+        startActivity(intent);
+    }
+
+    private void sucessfulLogin(){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("name","name");
         startActivity(intent);
     }
 
