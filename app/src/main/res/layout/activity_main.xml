@@ -37,7 +37,7 @@
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO"
+        android:contentDescription="add button"
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="40dp"
         app:srcCompat="@drawable/baseline_add_24" />

@@ -37,12 +37,7 @@ public class LoginActivity extends AppCompatActivity{
         ForgotPassword = findViewById(R.id.forgotPassword);
 
 
-        SignupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ShowSignup();
-            }
-        });
+        SignupBtn.setOnClickListener(v -> ShowSignup());
 
 
         LoginBtn.setOnClickListener(new View.OnClickListener() {
