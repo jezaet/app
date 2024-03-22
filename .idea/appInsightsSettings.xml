@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.greenrover" />
+                  <option name="mobileSdkAppId" value="1:401499020909:android:e392d55264a694e17be964" />
+                  <option name="projectId" value="greenrover-41ed3" />
+                  <option name="projectNumber" value="401499020909" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -8,18 +8,46 @@
     android:background="@color/background_color"
     tools:context=".InfoActivity">
 
-    <TextView
-        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="center|top"
-        android:background="@color/main_color"
         android:elevation="10dp"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textAllCaps="true"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:background="@color/main_color"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/infobackbutton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/baseline_arrow_back_24"
+            android:contentDescription="@string/back_button" />
+
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|top"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -200,6 +228,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="@string/step_5_weigh_the_plastic"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/list_pic"
+                    android:padding="@dimen/margin10"
+                    android:src="@drawable/scale" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin5"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:gravity="center"
+                    android:text="@string/step5"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="@string/step_5_submit_what_you_have"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -210,7 +264,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin20"
-                    android:text="@string/submit" />
+                    android:text="@string/start_now" />
 
 
             </LinearLayout>

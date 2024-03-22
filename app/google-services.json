@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "401499020909",
+    "project_id": "greenrover-41ed3",
+    "storage_bucket": "greenrover-41ed3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401499020909:android:e392d55264a694e17be964",
+        "android_client_info": {
+          "package_name": "com.example.greenrover"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm9M71gSwmsYZB5Su2NKpsQhFL0Pi0hA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

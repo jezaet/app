@@ -38,6 +38,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".GetDataActivity"
+            android:exported="true">
+        </activity>
+
 
         <activity
             android:name=".SplashActivity"
