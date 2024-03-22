@@ -1,17 +1,463 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
     tools:context=".AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center|top"
+        android:background="@color/main_color"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Account fragment"
-        android:gravity="center"
-        android:textSize="30sp" />
+        android:layout_marginTop="@dimen/margin40">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin20"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20"
+                android:gravity="center"
+                android:text="MY Account"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/dark_gray" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin20"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/loginError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin20"
+                android:gravity="center"
+                android:text="@string/an_error_occurred"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/first_name"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/user_img"
+                    app:srcCompat="@drawable/baseline_person_24" />
+
+                <EditText
+                    android:id="@+id/Firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="First Name"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/john"
+                    android:importantForAutofill="auto"
+                    android:inputType="text"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/last_name"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/user_img"
+                    app:srcCompat="@drawable/baseline_person_24" />
+
+                <EditText
+                    android:id="@+id/Lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="First Name"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/doe"
+                    android:importantForAutofill="auto"
+                    android:inputType="text"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/address"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/address_img"
+                    app:srcCompat="@drawable/baseline_add_home_24" />
+
+                <EditText
+                    android:id="@+id/Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="Address"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/_123_street"
+                    android:importantForAutofill="auto"
+                    android:inputType="text"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/postcode"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/address_img"
+                    app:srcCompat="@drawable/baseline_add_home_24" />
+
+                <EditText
+                    android:id="@+id/Postcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="postcode"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/xx0_0xx"
+                    android:importantForAutofill="auto"
+                    android:inputType="text"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/email_address"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/email_img"
+                    app:srcCompat="@drawable/baseline_email_24" />
+
+                <EditText
+                    android:id="@+id/Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="emailAddress"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/user_app_com"
+                    android:importantForAutofill="auto"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/phone_number"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/phone_img"
+                    app:srcCompat="@drawable/baseline_call_24" />
+
+                <EditText
+                    android:id="@+id/Phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="phoneNumber"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="07000000000"
+                    android:importantForAutofill="auto"
+                    android:inputType="phone"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/username"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/user_img"
+                    app:srcCompat="@drawable/baseline_person_24" />
+
+                <EditText
+                    android:id="@+id/Username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="username"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/user_name"
+                    android:importantForAutofill="auto"
+                    android:inputType="text"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:text="@string/password"
+                android:textSize="24sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin20"
+                android:layout_marginEnd="@dimen/margin20"
+                android:layout_marginBottom="@dimen/margin20"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/lock_image"
+                    app:srcCompat="@drawable/ic_baseline_lock_24" />
+
+                <EditText
+                    android:id="@+id/signupPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/input_box"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:autofillHints="password"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/pass123"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin20"
+                android:layout_weight="1"
+                android:padding="@dimen/margin13"
+                android:text="@string/update"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

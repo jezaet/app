@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-
             android:orientation="vertical">
 
             <TextView
@@ -240,29 +239,11 @@
                     android:layout_marginBottom="@dimen/margin20"
                     android:background="@color/dark_gray" />
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tipsRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/margin20"
-                    android:layout_marginEnd="@dimen/margin20"
-                    android:layout_marginBottom="@dimen/margin20"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:contentDescription="@string/list_pic"
-                        android:src="@drawable/tick" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8"
-                        android:gravity="center"
-                        android:text="Rinse out containers and bottles before recycling them to remove any leftover food or liquids."
-                        android:textSize="20sp" />
-                </LinearLayout>
+                    android:visibility="visible" />
 
 
 
@@ -272,7 +253,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="102dp" />
+                android:layout_height="100dp" />
 
 
         </LinearLayout>

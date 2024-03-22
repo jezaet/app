@@ -1,5 +1,6 @@
 package com.example.greenrover;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         addBtn.setOnClickListener(v -> {
-            replaceFragment(new AddFragment());
+            showInfo();
         });
     }
     private void replaceFragment(Fragment fragment) {
@@ -56,5 +57,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
         fragmentTransaction.commit();
+    }
+
+    private void showInfo() {
+        Intent intent = new Intent(this, InfoActivity.class);
+        intent.putExtra("name","info");
+        startActivity(intent);
     }
 }

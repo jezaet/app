@@ -40,11 +40,27 @@
     <string name="home">Home</string>
     <string name="history">History</string>
     <string name="logout">logout</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="type_1">Type 1</string>
     <string name="type_2">Type 2</string>
     <string name="weekly_n_goal">Weekly\n Goal</string>
     <string name="usefull_tips">Usefull Tips</string>
     <string name="list_pic">list pic</string>
+    <string name="update">Update</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to logout?</string>
+    <string name="no_data_for_this_week">No Data For this Week</string>
+    <string name="step_1_gather_plastic_items">Step 1: Gather Plastic Items</string>
+    <string name="step_1">Collect plastic items from around your home, including bottles, containers, and packaging made from various types of plastic.</string>
+    <string name="step_2">Look for the recycling symbols on the bottom of each plastic item. Plastics are categorized into seven types, with each marked by a recycling symbol and a number.</string>
+    <string name="step3_1">Sort the plastic items into two separate piles based on their recycling symbols:</string>
+    <string name="step3_2">1) Easy to Recycle: Types 1, 2 and 5. \n 2) Moderately Hard to Recycle: Types 3 , 4 and 6.</string>
+    <string name="step3_4">Some plastic items may NOT have a symbol and may have labels or packaging indicating the type of plastic used.</string>
+    <string name="step3_3">Important</string>
+    <string name="step4">Rinse out any residue or contaminants from the plastic items to prepare them for recycling. Remove caps, lids, and any non-plastic components as necessary.</string>
+    <string name="submit">submit</string>
+    <string name="step_5_submit_what_you_have">Step 5: submit What You have</string>
+    <string name="step_4_check_for_contaminants">Step 4: Check For Contaminants</string>
+    <string name="step_3_separate_plastics_into_groups">Step 3: Separate Plastics into Groups</string>
+    <string name="step_2_check_recycling_symbols">Step 2: Check Recycling Symbols</string>
+    <string name="how_to_sort_your_plastic_waste">How to sort your plastic waste?</string>
 </resources>
