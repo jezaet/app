@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "401499020909",
+    "firebase_url": "https://greenrover-41ed3-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "greenrover-41ed3",
     "storage_bucket": "greenrover-41ed3.appspot.com"
   },
@@ -12,7 +13,12 @@
           "package_name": "com.example.greenrover"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "401499020909-r185bbvsqjumnnq1cibs4s7j1i7osa93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBm9M71gSwmsYZB5Su2NKpsQhFL0Pi0hA4"
@@ -20,7 +26,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401499020909-r185bbvsqjumnnq1cibs4s7j1i7osa93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

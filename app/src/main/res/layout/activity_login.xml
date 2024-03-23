@@ -30,19 +30,10 @@
         app:srcCompat="@drawable/login_pic" />
 
     <TextView
-        android:id="@+id/loginError"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/an_error_occurred"
-        android:textColor="@color/red"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:visibility="invisible" />
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin40"
+        android:layout_marginTop="@dimen/margin20"
         android:layout_marginEnd="@dimen/margin40"
         android:text="@string/username"
         android:textSize="24sp" />

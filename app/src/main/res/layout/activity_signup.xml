@@ -51,20 +51,8 @@
                     android:layout_height="2dp"
                     android:background="@color/dark_gray" />
 
-                <TextView
-                    android:id="@+id/loginError"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin20"
-                    android:gravity="center"
-                    android:text="@string/an_error_occurred"
-                    android:textColor="@color/red"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
 
-
-                <TextView
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin20"
@@ -74,6 +62,8 @@
                     android:textSize="24sp" />
 
                 <LinearLayout
+                    android:id="@+id/Firstnamebox"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -128,6 +118,7 @@
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:id="@+id/Lastnamebox"
                     android:padding="@dimen/margin5">
 
                     <ImageView
@@ -174,6 +165,7 @@
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:id="@+id/SignupAddressbox"
                     android:padding="@dimen/margin5">
 
                     <ImageView
@@ -220,6 +212,7 @@
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:id="@+id/SignupPostcodebox"
                     android:padding="@dimen/margin5">
 
                     <ImageView
@@ -266,6 +259,7 @@
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:id="@+id/signupEmailbox"
                     android:padding="@dimen/margin5">
 
                     <ImageView
@@ -306,6 +300,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:id="@+id/signupPhonebox"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/margin20"
                     android:layout_marginEnd="@dimen/margin20"
@@ -340,52 +335,7 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin20"
-                    android:layout_marginTop="@dimen/margin20"
-                    android:layout_marginEnd="@dimen/margin20"
-                    android:text="@string/username"
-                    android:textSize="24sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="@dimen/margin20"
-                    android:layout_marginEnd="@dimen/margin20"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/margin5">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/user_img"
-                        app:srcCompat="@drawable/baseline_person_24" />
-
-                    <EditText
-                        android:id="@+id/signupUsername"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/input_box"
-                        android:layout_marginLeft="@dimen/margin10"
-                        android:layout_marginRight="@dimen/margin10"
-                        android:layout_weight="1"
-                        android:autofillHints="username"
-                        android:background="@null"
-                        android:ems="10"
-                        android:hint="@string/user_name"
-                        android:importantForAutofill="auto"
-                        android:inputType="text"
-                        android:textColor="@color/text_color"
-                        android:textColorHint="@color/text_color"
-                        android:textSize="20sp" />
-                </LinearLayout>
-
-                <TextView
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin20"
@@ -404,6 +354,7 @@
                     android:layout_marginBottom="@dimen/margin20"
                     android:background="@drawable/border"
                     android:gravity="center"
+                    android:id="@+id/signupPasswordbox"
                     android:orientation="horizontal"
                     android:padding="@dimen/margin5">
 

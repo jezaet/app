@@ -11,7 +11,7 @@
         android:background="@color/main_color"
         android:gravity="center"
         android:text="@string/message"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold" />
 
     <TextView
@@ -20,10 +20,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin10"
         android:gravity="center"
-        android:text="" />
+        android:text=""
+        android:textColor="@color/red"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/msg_box_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin20"
