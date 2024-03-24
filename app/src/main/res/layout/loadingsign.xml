@@ -29,12 +29,12 @@
     <TextView
         android:id="@+id/loadingMessage"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin10"
         android:gravity="center"
         android:singleLine="true"
         android:text="@string/app_name"
-        android:textColor="@color/text_color"
         android:textSize="@dimen/textsize_medium" />
 
 </LinearLayout>

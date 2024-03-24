@@ -8,15 +8,20 @@ public class User {
     public String Postcode;
     public String PhoneNum;
     public String Email;
+    public boolean RememberMe;
 
 
-    public User(String firstName, String lastName, String address, String postcode, String phoneNum, String email){
+    public User(String firstName, String lastName, String address, String postcode, String phoneNum, String email, boolean rememberMe){
         this.FirstName = firstName;
         this.LastName = lastName;
         this.Address = address;
         this.Postcode = postcode;
         this.PhoneNum = phoneNum;
         this.Email = email;
+        this.RememberMe = rememberMe;
+    }
+
+    public User() {
     }
 
 }

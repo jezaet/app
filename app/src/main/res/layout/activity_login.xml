@@ -35,10 +35,13 @@
         android:layout_marginStart="@dimen/margin40"
         android:layout_marginTop="@dimen/margin20"
         android:layout_marginEnd="@dimen/margin40"
-        android:text="@string/username"
+        android:text="@string/email_address"
         android:textSize="24sp" />
 
+
+
     <LinearLayout
+        android:id="@+id/loginUsernameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -53,8 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:contentDescription="@string/user_img"
-            app:srcCompat="@drawable/baseline_person_24" />
+            android:contentDescription="@string/email_img"
+            app:srcCompat="@drawable/baseline_email_24" />
 
         <EditText
             android:id="@+id/loginUsername"
@@ -63,10 +66,10 @@
             android:layout_marginLeft="@dimen/margin10"
             android:layout_marginRight="@dimen/margin10"
             android:layout_weight="1"
-            android:autofillHints="username"
+            android:autofillHints="emailAddress"
             android:background="@null"
             android:ems="10"
-            android:hint="@string/user_name"
+            android:hint="@string/user_app_com"
             android:importantForAutofill="auto"
             android:inputType="text"
             android:textColor="@color/text_color"
@@ -84,6 +87,7 @@
         android:textSize="24sp" />
 
     <LinearLayout
+        android:id="@+id/loginPasswordLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
