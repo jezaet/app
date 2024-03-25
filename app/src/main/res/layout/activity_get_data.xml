@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/databackbtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -26,7 +26,7 @@
 
 
         <TextView
-            android:id="@+id/textView7"
+
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -73,7 +73,6 @@
             android:background="@color/dark_gray" />
 
         <LinearLayout
-            android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin20"
@@ -91,10 +90,10 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/weightT2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -114,7 +113,7 @@
                     android:layout_marginLeft="@dimen/margin10"
                     android:layout_weight="3"
                     android:background="@null"
-                    android:gravity="center_vertical|end"
+                    android:gravity="center"
                     android:hint="0.565"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_color"
@@ -145,7 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
+                android:id="@+id/weightT1"
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -165,7 +164,7 @@
                     android:layout_marginStart="@dimen/margin10"
                     android:layout_weight="3"
                     android:background="@null"
-                    android:gravity="center_vertical|end"
+                    android:gravity="center"
                     android:hint="@string/_0_565"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_color"
@@ -197,7 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
+                android:id="@+id/people"
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -217,7 +216,7 @@
                     android:layout_marginLeft="@dimen/margin10"
                     android:layout_weight="3"
                     android:background="@null"
-                    android:gravity="center_vertical|end"
+                    android:gravity="center"
                     android:hint="5"
                     android:inputType="number"
                     android:textColor="@color/text_color"
