@@ -5,12 +5,12 @@ import java.util.List;
 public class UserSubmission {
 
     private String UserID;
-    private List<UploadData> data;
+    private UploadData data;
 
     public UserSubmission() {
     }
 
-    public UserSubmission(String UserID, List<UploadData> data) {
+    public UserSubmission(String UserID, UploadData data) {
         this.UserID = UserID;
         this.data = data;
     }
@@ -23,11 +23,11 @@ public class UserSubmission {
         this.UserID = UserID;
     }
 
-    public List<UploadData> getData() {
+    public UploadData getData() {
         return data;
     }
 
-    public void setData(List<UploadData> data) {
+    public void setData(UploadData data) {
         this.data = data;
     }
 }

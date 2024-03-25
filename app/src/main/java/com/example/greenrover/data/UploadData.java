@@ -6,18 +6,17 @@ public class UploadData {
 
     private int numOfResidents;
     private float T1, T2;
-    private String LSOA;
-    private  Date date;
+    private String LSOA, Date;
 
     public UploadData() {
     }
 
-    public UploadData(float t1, float t2 , int numOfResidents, String LSOA, Date date) {
+    public UploadData(float t1, float t2 , int numOfResidents, String date, String LSOA) {
         this.numOfResidents = numOfResidents;
         this.T1 = t1;
         this.T2 = t2;
         this.LSOA = LSOA;
-        this.date = date;
+        this.Date = date;
     }
 
     public int getNumOfResidents() {
@@ -52,8 +51,12 @@ public class UploadData {
         this.LSOA = LSOA;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        this.Date = date;
     }
 
 

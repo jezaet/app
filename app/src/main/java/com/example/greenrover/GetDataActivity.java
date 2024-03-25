@@ -1,6 +1,9 @@
 package com.example.greenrover;
 
+import static java.text.DateFormat.getDateInstance;
+
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.greenrover.data.UploadData;
 import com.example.greenrover.data.User;
+import com.example.greenrover.data.UserSubmission;
 import com.example.greenrover.networkTasks.GetLsoa;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -215,7 +220,6 @@ public class GetDataActivity extends AppCompatActivity implements GetLsoa.AsyncR
     }
 
     private void AddData() {
-        d.showToast("LSOA: " + lsoa, this);
         showloadingScreen("Adding data...");
         String t1 = T1.getText().toString();
         String t2 = T2.getText().toString();
@@ -223,20 +227,24 @@ public class GetDataActivity extends AppCompatActivity implements GetLsoa.AsyncR
         int intNum = Integer.parseInt(num);
         float intT1 = Float.parseFloat(t1);
         float intT2 = Float.parseFloat(t2);
-        Date date = new Date();
-        //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date currentDate = new Date();
+        String formattedDate = dateFormat.format(currentDate);
 
+        UploadData uploadData = new UploadData(intT1, intT2, intNum, formattedDate,lsoa);
+        UserSubmission userSubmission = new UserSubmission(mAuth.getCurrentUser().getUid(), uploadData);
 
-
-
-
-        //UploadData uploadData = new UploadData(intT1, intT2, intNum);
-        //FirebaseDatabase.getInstance().getReference("RecycleData").push().setValue(uploadData);
-
+        database.getReference("RecycleData").push().setValue(userSubmission);
         loader.dismiss();
+
+        showMainActivity();
+
     }
 
     private void showMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
         finish();
     }
 
