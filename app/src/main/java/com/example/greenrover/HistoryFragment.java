@@ -80,7 +80,7 @@ public class HistoryFragment extends Fragment {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (isAdded()) {
+                        if (isAdded() && getContext() != null) {
                             if (snapshot.exists()) {
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                     String id = dataSnapshot.child("userID").getValue(String.class);

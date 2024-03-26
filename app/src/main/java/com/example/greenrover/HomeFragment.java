@@ -37,12 +37,14 @@ public class HomeFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private FirebaseDatabase database;
-    TextView disposed_total;
+    TextView disposed_total, collection_text;
     ProgressBar progressBar1, progressBar2, progressBar3;
     RecyclerView recyclerView;
     ArrayList<String> tips;
     Dialog loader;
     msgPopup d;
+    Calendar calendar;
+    int endOfWeekDayOfMonth;
 
 
     @Override
@@ -58,6 +60,7 @@ public class HomeFragment extends Fragment {
         progressBar2 = rootView.findViewById(R.id.progressBar2);
         progressBar3 = rootView.findViewById(R.id.progressBar3);
         recyclerView = rootView.findViewById(R.id.tipsRecyclerView);
+        collection_text = rootView.findViewById(R.id.collection_text);
         d = new msgPopup();
         tips = new ArrayList<>();
 
@@ -91,7 +94,7 @@ public class HomeFragment extends Fragment {
                                 }
 
                                 double total = one + two;
-                                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                                DecimalFormat decimalFormat = new DecimalFormat("#.###");
                                 String roundedNumber = decimalFormat.format(total);
                                 double one_total = (num * 0.166);
                                 double two_total = (num * 0.065);
@@ -105,6 +108,29 @@ public class HomeFragment extends Fragment {
                                 progressBar1.setProgress(t1);
                                 progressBar2.setProgress(t2);
                                 progressBar3.setProgress(t3);
+
+                                calendar.add(Calendar.DAY_OF_WEEK, -4);
+                                int num2 = calendar.get(Calendar.DAY_OF_MONTH);
+                                String s2 = dataToText(num2);
+                                String s3 = "";
+                                int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+                                if(currentDayOfWeek == 1){
+                                    s3 = "sunday ";
+                                } else if (currentDayOfWeek == 2){
+                                    s3 = "monday ";
+                                } else if (currentDayOfWeek == 3){
+                                    s3 = "tuesday ";
+                                } else if (currentDayOfWeek == 4){
+                                    s3 = "wednesday ";
+                                } else if (currentDayOfWeek == 5){
+                                    s3 = "thursday ";
+                                } else if (currentDayOfWeek == 6){
+                                    s3 = "friday ";
+                                } else if (currentDayOfWeek == 7){
+                                    s3 = "saturday ";
+                                }
+                                collection_text.setText("Next Collection:\n " + s3+ s2);
 
 
                             } else {
@@ -131,7 +157,7 @@ public class HomeFragment extends Fragment {
         database.getReference("RecyclingFacts").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (isAdded()) {
+                if (isAdded() && getContext() != null) {
                     tips.clear();
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         tips.add(String.valueOf(dataSnapshot.child("text").getValue()));
@@ -183,7 +209,7 @@ public class HomeFragment extends Fragment {
 
     public boolean thisweek(String s){
 
-        Calendar calendar = Calendar.getInstance();
+        calendar = Calendar.getInstance();
         calendar.setFirstDayOfWeek(Calendar.MONDAY);
         int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -207,6 +233,34 @@ public class HomeFragment extends Fragment {
         } else {
             return false;
         }
+
+
+    }
+
+    public String dataToText(int DayOfMonth){
+        String suffix;
+
+        if (DayOfMonth >= 11 && DayOfMonth <= 13) {
+            suffix = "th";
+        } else {
+            int lastDigit = DayOfMonth % 10;
+            switch (lastDigit) {
+                case 1:
+                    suffix = "st";
+                    break;
+                case 2:
+                    suffix = "nd";
+                    break;
+                case 3:
+                    suffix = "rd";
+                    break;
+                default:
+                    suffix = "th";
+                    break;
+            }
+        }
+
+        return (DayOfMonth + suffix);
 
 
     }
