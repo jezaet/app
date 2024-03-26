@@ -28,9 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="@dimen/margin20"
             android:background="@drawable/rounded_corners"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/margin20">
 
 
             <ImageButton
@@ -41,12 +41,12 @@
                 android:src="@drawable/baseline_keyboard_arrow_left_24" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_marginEnd="@dimen/margin10"
-                android:layout_marginStart="@dimen/margin10"
+                android:id="@+id/textViewDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin10"
+                android:layout_marginEnd="@dimen/margin10"
                 android:layout_weight="1"
                 android:text="11th March 2024"
                 android:textSize="20sp" />
@@ -56,12 +56,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="false"
                 android:src="@drawable/baseline_keyboard_arrow_right_24" />
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/NoDate"
+            android:id="@+id/NoDataTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/margin5"
@@ -72,30 +73,15 @@
             android:textStyle="bold"
             android:visibility="gone" />
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin20"
+            android:layout_marginEnd="@dimen/margin20"
             android:layout_marginBottom="@dimen/margin50"
-            android:layout_weight="1">
+            android:visibility="visible" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin20"
-                android:orientation="vertical">
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/historyRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="visible" />
-
-
-            </LinearLayout>
-
-
-        </ScrollView>
 
     </LinearLayout>
 

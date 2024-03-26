@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.greenrover.R;
-import com.example.greenrover.data.Tips;
 
 import java.util.ArrayList;
 
