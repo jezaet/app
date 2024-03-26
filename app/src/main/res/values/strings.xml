@@ -77,4 +77,5 @@
     <string name="step5">For each pile gather all of the items and weight them together. Remember to ignore the weight of the container you use to weigh the items.</string>
     <string name="enter_the_weight_of_the_plastics">Enter the weight of the plastics</string>
     <string name="enter_the_weight_of_the_second_pile_with_type_3_4_6_and_7">Enter the weight of the second pile with Type 3,4 6, and 7</string>
+    <string name="holding_trophy">holding trophy</string>
 </resources>

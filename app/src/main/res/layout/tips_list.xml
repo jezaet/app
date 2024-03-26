@@ -22,15 +22,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
+            android:layout_gravity="center"
             android:contentDescription="@string/list_pic"
             android:src="@drawable/tick" />
 
         <TextView
+            android:id="@+id/Tipstext"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="8"
             android:gravity="center"
-            android:text="Rinse out containers and bottles before recycling them to remove any leftover food or liquids."
+            android:text=""
             android:textSize="20sp" />
     </LinearLayout>
 

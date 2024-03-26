@@ -46,7 +46,7 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:visibility="visible">
 
@@ -55,7 +55,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin10"
                             android:gravity="center"
-                            android:text="You have disposted of"
+                            android:text="This week \nyou disposted of"
                             android:textSize="20sp" />
 
                         <TextView
@@ -71,13 +71,12 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/imageView2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="@dimen/margin10"
-
                         android:rotationY="180"
-                        tools:src="@drawable/holding_trophy" />
+                        android:src="@drawable/holding_trophy"
+                        android:contentDescription="@string/holding_trophy" />
 
 
                 </LinearLayout>
@@ -216,12 +215,11 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/usefull_tips"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin20"
-                android:background="@color/main_color_light">
+                android:background="@color/main_color_light"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -242,11 +240,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/tipsRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="550dp"
                     android:visibility="visible" />
-
-
-
 
 
             </LinearLayout>
