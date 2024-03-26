@@ -50,6 +50,7 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        showloadingScreen("Loading data...");
         View rootView = inflater.inflate(R.layout.fragment_history, container, false);
 
         mAuth = FirebaseAuth.getInstance();
@@ -74,46 +75,47 @@ public class HistoryFragment extends Fragment {
 
 
     public void getdata(){
-        showloadingScreen("Loading data...");
         historyList.clear();
         database.getReference("RecycleData")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                String id = dataSnapshot.child("userID").getValue(String.class);
-                                if(id.equals(Objects.requireNonNull(mAuth.getCurrentUser()).getUid())) {
-                                    DataSnapshot dataSnapshotChild = dataSnapshot.child("data");
-                                    String date = dataSnapshotChild.child("date").getValue(String.class);
-                                    Boolean inWeek = InSpecifiedWeek(date);
-                                    if(inWeek){
-                                        historyList.add(new UploadData(
-                                                Float.parseFloat(dataSnapshotChild.child("t1").getValue().toString()),
-                                                Float.parseFloat(dataSnapshotChild.child("t2").getValue().toString()),
-                                                Integer.parseInt(dataSnapshotChild.child("numOfResidents").getValue().toString()),
-                                                date, " "));
+                        if (isAdded()) {
+                            if (snapshot.exists()) {
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    String id = dataSnapshot.child("userID").getValue(String.class);
+                                    if (id.equals(Objects.requireNonNull(mAuth.getCurrentUser()).getUid())) {
+                                        DataSnapshot dataSnapshotChild = dataSnapshot.child("data");
+                                        String date = dataSnapshotChild.child("date").getValue(String.class);
+                                        Boolean inWeek = InSpecifiedWeek(date);
+                                        if (inWeek) {
+                                            historyList.add(new UploadData(
+                                                    Float.parseFloat(dataSnapshotChild.child("t1").getValue().toString()),
+                                                    Float.parseFloat(dataSnapshotChild.child("t2").getValue().toString()),
+                                                    Integer.parseInt(dataSnapshotChild.child("numOfResidents").getValue().toString()),
+                                                    date, " "));
+                                        }
+
                                     }
 
                                 }
 
-                            }
+                                if (!historyList.isEmpty()) {
+                                    nodata.setVisibility(View.GONE);
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                } else {
+                                    nodata.setVisibility(View.VISIBLE);
+                                    recyclerView.setVisibility(View.GONE);
+                                }
 
-                            if(!historyList.isEmpty()){
-                                nodata.setVisibility(View.GONE);
-                                recyclerView.setVisibility(View.VISIBLE);
+                                recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+                                recyclerView.setAdapter(new HistoryAdapter(historyList, getActivity()));
+
                             } else {
                                 nodata.setVisibility(View.VISIBLE);
                                 recyclerView.setVisibility(View.GONE);
+
                             }
-
-                            recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-                            recyclerView.setAdapter(new HistoryAdapter(historyList, getActivity()));
-
-                        } else {
-                            nodata.setVisibility(View.VISIBLE);
-                            recyclerView.setVisibility(View.GONE);
-
                         }
 
 

@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -65,50 +66,53 @@ public class HomeFragment extends Fragment {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            double one = 0;
-                            double two = 0;
-                            int num = 0;
-                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                String id = dataSnapshot.child("userID").getValue(String.class);
-                                if(id.equals(Objects.requireNonNull(mAuth.getCurrentUser()).getUid())) {
-                                    DataSnapshot dataSnapshotChild = dataSnapshot.child("data");
-                                    String date = dataSnapshotChild.child("date").getValue(String.class);
-                                    boolean thisweek = thisweek(date);
-                                    if(thisweek){
-                                        one = one + Double.parseDouble((String.valueOf(dataSnapshotChild.child("t1").getValue())));
-                                        two = two + Double.parseDouble(String.valueOf(dataSnapshotChild.child("t2").getValue()));
-                                        if (Integer.parseInt(String.valueOf(dataSnapshotChild.child("numOfResidents").getValue())) > num){
-                                            num = Integer.parseInt(String.valueOf(dataSnapshotChild.child("numOfResidents").getValue()));
+                        if (isAdded()) {
+                            if (snapshot.exists()) {
+                                double one = 0;
+                                double two = 0;
+                                int num = 0;
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    String id = dataSnapshot.child("userID").getValue(String.class);
+                                    if (id.equals(Objects.requireNonNull(mAuth.getCurrentUser()).getUid())) {
+                                        DataSnapshot dataSnapshotChild = dataSnapshot.child("data");
+                                        String date = dataSnapshotChild.child("date").getValue(String.class);
+                                        boolean thisweek = thisweek(date);
+                                        if (thisweek) {
+                                            one = one + Double.parseDouble((String.valueOf(dataSnapshotChild.child("t1").getValue())));
+                                            two = two + Double.parseDouble(String.valueOf(dataSnapshotChild.child("t2").getValue()));
+                                            if (Integer.parseInt(String.valueOf(dataSnapshotChild.child("numOfResidents").getValue())) > num) {
+                                                num = Integer.parseInt(String.valueOf(dataSnapshotChild.child("numOfResidents").getValue()));
+                                            }
+
                                         }
 
                                     }
 
                                 }
 
+                                double total = one + two;
+                                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                                String roundedNumber = decimalFormat.format(total);
+                                double one_total = (num * 0.166);
+                                double two_total = (num * 0.065);
+                                double total_total = one_total + two_total;
+
+                                int t1 = (int) ((one / one_total) * 100);
+                                int t2 = (int) ((two / two_total) * 100);
+                                int t3 = (int) ((total / total_total) * 100);
+
+                                disposed_total.setText(roundedNumber + " kg");
+                                progressBar1.setProgress(t1);
+                                progressBar2.setProgress(t2);
+                                progressBar3.setProgress(t3);
+
+
+                            } else {
+                                disposed_total.setText("0");
+                                progressBar1.setProgress(0);
+                                progressBar2.setProgress(0);
+                                progressBar3.setProgress(0);
                             }
-
-                            double total = one + two;
-                            double one_total = (num * 0.166);
-                            double two_total = (num * 0.065);
-                            double total_total = one_total + two_total;
-
-                            int t1 = (int) ((one/one_total)*100);
-                            int t2 = (int) ((two/two_total)*100);
-                            int t3 = (int) ((total/total_total)*100);
-
-                            disposed_total.setText(String.valueOf(total)+" kg");
-                            progressBar1.setProgress(t1);
-                            progressBar2.setProgress(t2);
-                            progressBar3.setProgress(t3);
-
-
-
-                        } else {
-                            disposed_total.setText("0");
-                            progressBar1.setProgress(0);
-                            progressBar2.setProgress(0);
-                            progressBar3.setProgress(0);
                         }
 
 
@@ -127,18 +131,20 @@ public class HomeFragment extends Fragment {
         database.getReference("RecyclingFacts").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                tips.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    tips.add(String.valueOf(dataSnapshot.child("text").getValue()));
-                }
+                if (isAdded()) {
+                    tips.clear();
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        tips.add(String.valueOf(dataSnapshot.child("text").getValue()));
+                    }
 
-                Collections.shuffle(tips);
-                while (tips.size() > 3) {
-                    tips.remove(tips.size() - 1);
-                }
+                    Collections.shuffle(tips);
+                    while (tips.size() > 3) {
+                        tips.remove(tips.size() - 1);
+                    }
 
-                recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-                recyclerView.setAdapter(new TipsAdapter(tips, getActivity()));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+                    recyclerView.setAdapter(new TipsAdapter(tips, getActivity()));
+                }
 
 
             }
@@ -180,8 +186,6 @@ public class HomeFragment extends Fragment {
         Calendar calendar = Calendar.getInstance();
         calendar.setFirstDayOfWeek(Calendar.MONDAY);
         int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-        int currentDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-        int currentMonth = calendar.get(Calendar.MONTH) + 1;
 
         calendar.add(Calendar.DAY_OF_WEEK, Calendar.MONDAY - currentDayOfWeek);
         int startOfWeekDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);

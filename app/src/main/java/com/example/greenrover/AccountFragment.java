@@ -211,15 +211,17 @@ public class AccountFragment extends Fragment {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        user = snapshot.getValue(User.class);
-                        if (user != null) {
-                            FirstName.setText(user.FirstName);
-                            LastName.setText(user.LastName);
-                            Address.setText(user.Address);
-                            Postcode.setText(user.Postcode);
-                            Email.setText(user.Email);
-                            PhoneNum.setText(user.PhoneNum);
+                        if (isAdded()) {
+                            user = snapshot.getValue(User.class);
+                            if (user != null) {
+                                FirstName.setText(user.FirstName);
+                                LastName.setText(user.LastName);
+                                Address.setText(user.Address);
+                                Postcode.setText(user.Postcode);
+                                Email.setText(user.Email);
+                                PhoneNum.setText(user.PhoneNum);
 
+                            }
                         }
                     }
 
