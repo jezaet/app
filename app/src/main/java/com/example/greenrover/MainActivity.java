@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.greenrover.databinding.ActivityMainBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     FloatingActionButton addBtn;
     private FirebaseAuth mAuth;
-    private FirebaseDatabase database;
     msgPopup d;
     Dialog logoutDialog;
 
@@ -39,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

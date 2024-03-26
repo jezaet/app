@@ -194,6 +194,12 @@ public class LoginActivity extends AppCompatActivity{
                                                 database.getReference("users")
                                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                         .setValue(user);
+                                            } else {
+                                                user.RememberMe = false;
+                                                database.getReference("users")
+                                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                        .setValue(user);
+
                                             }
                                             sucessfulLogin();
                                         }

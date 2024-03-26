@@ -68,6 +68,7 @@
                 android:textSize="24sp" />
 
             <LinearLayout
+                android:id="@+id/FirstNamebox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -114,6 +115,7 @@
                 android:textSize="24sp" />
 
             <LinearLayout
+                android:id="@+id/LastNamebox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -160,6 +162,7 @@
                 android:textSize="24sp" />
 
             <LinearLayout
+                android:id="@+id/Addressbox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -206,6 +209,7 @@
                 android:textSize="24sp" />
 
             <LinearLayout
+                android:id="@+id/Postcodebox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -252,6 +256,7 @@
                 android:textSize="24sp" />
 
             <LinearLayout
+                android:id="@+id/Emailbox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -298,6 +303,7 @@
                 android:textSize="24sp" />
 
             <LinearLayout
+                android:id="@+id/Phonebox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -334,50 +340,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin20"
-                android:layout_marginTop="@dimen/margin20"
-                android:layout_marginEnd="@dimen/margin20"
-                android:text="@string/username"
-                android:textSize="24sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/margin20"
-                android:layout_marginEnd="@dimen/margin20"
-                android:background="@drawable/border"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/margin5">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/user_img"
-                    app:srcCompat="@drawable/baseline_person_24" />
-
-                <EditText
-                    android:id="@+id/Username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/input_box"
-                    android:layout_marginLeft="@dimen/margin10"
-                    android:layout_marginRight="@dimen/margin10"
-                    android:layout_weight="1"
-                    android:autofillHints="username"
-                    android:background="@null"
-                    android:ems="10"
-                    android:hint="@string/user_name"
-                    android:importantForAutofill="auto"
-                    android:inputType="text"
-                    android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    android:textSize="20sp" />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -390,6 +352,7 @@
 
 
             <LinearLayout
+                android:id="@+id/newPasswordbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -409,7 +372,7 @@
                     app:srcCompat="@drawable/ic_baseline_lock_24" />
 
                 <EditText
-                    android:id="@+id/signupPassword"
+                    android:id="@+id/newPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/input_box"
                     android:layout_marginLeft="@dimen/margin10"
@@ -418,7 +381,6 @@
                     android:autofillHints="password"
                     android:background="@null"
                     android:ems="10"
-                    android:hint="@string/pass123"
                     android:inputType="textPassword"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color"
