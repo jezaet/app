@@ -98,11 +98,16 @@ public class HomeFragment extends Fragment {
                                 String roundedNumber = decimalFormat.format(total);
                                 double one_total = (num * 0.166);
                                 double two_total = (num * 0.065);
-                                double total_total = one_total + two_total;
 
                                 int t1 = (int) ((one / one_total) * 100);
                                 int t2 = (int) ((two / two_total) * 100);
-                                int t3 = (int) ((total / total_total) * 100);
+                                if(t1 > 100){
+                                    t1 = 100;
+                                }
+                                if(t2 > 100){
+                                    t2 = 100;
+                                }
+                                int t3 = t1 + t2;
 
                                 disposed_total.setText(roundedNumber + " kg");
                                 progressBar1.setProgress(t1);
@@ -229,8 +234,10 @@ public class HomeFragment extends Fragment {
         if(givenMonth == startOfWeekMonth && givenMonth == endOfWeekMonth &&
                 givenDayOfMonth >= startOfWeekDayOfMonth &&
                 givenDayOfMonth <= endOfWeekDayOfMonth){
+            Log.d("week", s+" "+givenMonth+" "+startOfWeekMonth + " "+endOfWeekMonth + " "+givenDayOfMonth+" "+startOfWeekDayOfMonth + " "+endOfWeekDayOfMonth);
             return true;
         } else {
+            Log.d("week2", s);
             return false;
         }
 
