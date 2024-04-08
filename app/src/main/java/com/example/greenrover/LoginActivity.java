@@ -153,6 +153,7 @@ public class LoginActivity extends AppCompatActivity{
             d.showToast("Please fill all fields", this);
             PasswordLayout.setBackgroundResource(R.drawable.error_border);
             UserNameLayout.setBackgroundResource(R.drawable.error_border);
+            loader.dismiss();
             return;
 
         } else if(email.isEmpty()){
@@ -160,6 +161,7 @@ public class LoginActivity extends AppCompatActivity{
             UserName.requestFocus();
             d.showToast("Email is required", this);
             UserNameLayout.setBackgroundResource(R.drawable.error_border);
+            loader.dismiss();
             return;
 
         } else if (!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
@@ -167,6 +169,7 @@ public class LoginActivity extends AppCompatActivity{
             UserName.setError("please enter a valid email");
             UserNameLayout.setBackgroundResource(R.drawable.error_border);
             d.showToast("please enter a valid email E.g test@app.com", this);
+            loader.dismiss();
             return;
 
         } else if(password.isEmpty()){
@@ -174,6 +177,7 @@ public class LoginActivity extends AppCompatActivity{
             UserPassword.requestFocus();
             d.showToast("Password is required", this);
             PasswordLayout.setBackgroundResource(R.drawable.error_border);
+            loader.dismiss();
             return;
         }
 

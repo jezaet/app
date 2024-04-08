@@ -194,9 +194,9 @@ public class SignupActivity extends AppCompatActivity{
 
 
     private void ShowLogin(){
-        loader.dismiss();
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        if (loader != null) {
+            loader.dismiss();
+        }
         finish();
     }
 
