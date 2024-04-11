@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    android:gravity="center_horizontal|center_vertical"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
@@ -37,7 +37,6 @@
         android:layout_marginEnd="@dimen/margin40"
         android:text="@string/email_address"
         android:textSize="24sp" />
-
 
 
     <LinearLayout
@@ -176,7 +175,8 @@
 
         android:layout_marginEnd="@dimen/margin40"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
 
         <View
@@ -210,7 +210,8 @@
         android:layout_marginTop="@dimen/margin10"
         android:layout_marginEnd="@dimen/margin40"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
 
         <ImageView

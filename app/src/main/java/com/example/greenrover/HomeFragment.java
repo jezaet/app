@@ -114,28 +114,8 @@ public class HomeFragment extends Fragment {
                                 progressBar2.setProgress(t2);
                                 progressBar3.setProgress(t3);
 
-                                calendar.add(Calendar.DAY_OF_WEEK, -4);
-                                int num2 = calendar.get(Calendar.DAY_OF_MONTH);
-                                String s2 = dataToText(num2);
-                                String s3 = "";
-                                int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-
-                                if(currentDayOfWeek == 1){
-                                    s3 = "sunday ";
-                                } else if (currentDayOfWeek == 2){
-                                    s3 = "monday ";
-                                } else if (currentDayOfWeek == 3){
-                                    s3 = "tuesday ";
-                                } else if (currentDayOfWeek == 4){
-                                    s3 = "wednesday ";
-                                } else if (currentDayOfWeek == 5){
-                                    s3 = "thursday ";
-                                } else if (currentDayOfWeek == 6){
-                                    s3 = "friday ";
-                                } else if (currentDayOfWeek == 7){
-                                    s3 = "saturday ";
-                                }
-                                collection_text.setText("Next Collection:\n " + s3+ s2);
+                                String s = Collectionday();
+                                collection_text.setText("Next Collection:\n " + s);
 
 
                             } else {
@@ -210,6 +190,35 @@ public class HomeFragment extends Fragment {
         loader.setCanceledOnTouchOutside(false);
         loader.show();
 
+    }
+
+    public String Collectionday(){
+        int today = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+        calendar.add(Calendar.DAY_OF_WEEK, -4);
+        if (today > calendar.get(Calendar.DAY_OF_WEEK)){
+            calendar.add(Calendar.DAY_OF_WEEK, 7);
+        }
+        int num2 = calendar.get(Calendar.DAY_OF_MONTH);
+        String s2 = dataToText(num2);
+        String s3 = "";
+        int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+        if(currentDayOfWeek == 1){
+            s3 = "sunday ";
+        } else if (currentDayOfWeek == 2){
+            s3 = "monday ";
+        } else if (currentDayOfWeek == 3){
+            s3 = "tuesday ";
+        } else if (currentDayOfWeek == 4){
+            s3 = "wednesday ";
+        } else if (currentDayOfWeek == 5){
+            s3 = "thursday ";
+        } else if (currentDayOfWeek == 6){
+            s3 = "friday ";
+        } else if (currentDayOfWeek == 7){
+            s3 = "saturday ";
+        }
+        return s3 + s2;
     }
 
     public boolean thisweek(String s){
