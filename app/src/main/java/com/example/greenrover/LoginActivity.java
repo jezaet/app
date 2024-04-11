@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -52,6 +53,7 @@ public class LoginActivity extends AppCompatActivity{
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+        Log.d("LoginActivity", "onCreate: " + mAuth.getCurrentUser());
         if (mAuth.getCurrentUser() != null) {
             database.getReference("users")
                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

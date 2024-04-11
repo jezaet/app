@@ -193,15 +193,21 @@ public class HomeFragment extends Fragment {
     }
 
     public String Collectionday(){
+        Calendar calendar2 = Calendar.getInstance();
+        calendar2.setFirstDayOfWeek(Calendar.MONDAY);
+        int DayOfWeek = calendar2.get(Calendar.DAY_OF_WEEK);
+        calendar2.add(Calendar.DAY_OF_WEEK, Calendar.MONDAY - DayOfWeek);
+        calendar2.add(Calendar.DAY_OF_WEEK, 6);
+
         int today = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
-        calendar.add(Calendar.DAY_OF_WEEK, -4);
-        if (today > calendar.get(Calendar.DAY_OF_WEEK)){
-            calendar.add(Calendar.DAY_OF_WEEK, 7);
+        calendar2.add(Calendar.DAY_OF_WEEK, -4);
+        if (today > calendar2.get(Calendar.DAY_OF_WEEK)){
+            calendar2.add(Calendar.DAY_OF_WEEK, 7);
         }
-        int num2 = calendar.get(Calendar.DAY_OF_MONTH);
+        int num2 = calendar2.get(Calendar.DAY_OF_MONTH);
         String s2 = dataToText(num2);
         String s3 = "";
-        int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        int currentDayOfWeek = calendar2.get(Calendar.DAY_OF_WEEK);
 
         if(currentDayOfWeek == 1){
             s3 = "sunday ";

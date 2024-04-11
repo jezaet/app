@@ -208,7 +208,7 @@
 
                     android:gravity="center"
                     android:padding="@dimen/margin10"
-                    android:text="Your recycling rating is +15% higher than the local average. keep it up!"
+                    android:text="Your recycling rating is 15% lower than the local average. Try recycle more plastics!"
                     android:textSize="20sp" />
 
 

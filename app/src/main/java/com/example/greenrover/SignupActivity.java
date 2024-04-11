@@ -186,6 +186,25 @@ public class SignupActivity extends AppCompatActivity{
             }
         });
 
+        UserPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String newPassword = s.toString();
+                if (!newPassword.equals(UserPassword.toString())) {
+                    UserPasswordbox.setBackgroundResource(R.drawable.border);
+                }
+            }
+        });
+
 
 
 
@@ -294,7 +313,9 @@ public class SignupActivity extends AppCompatActivity{
                         User user = new User(firstname, lastname, address, postcode, phone, email, false);
                         FirebaseDatabase.getInstance().getReference("users")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                .setValue(user).addOnCompleteListener(task1 -> ShowLogin());
+                                .setValue(user);
+                        mAuth.signOut();
+                        ShowLogin();
                     } else {
                         loader.dismiss();
                         Exception exception = task.getException();
